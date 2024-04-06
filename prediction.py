@@ -19,7 +19,7 @@ def predict_mpg(config):
         # Assuming these are the methods of your model to check rule 001 and 002
         y_pred_1 = check_rule_001(df)
         y_pred_2 = check_rule_002(df, df['entityId'][0])  # Assuming entityId is unique for each transaction
-        y_pred_3 =  check3(config)
+        #y_pred_3 =  check3(config)
         if y_pred_1: 
             ruleViolated.append("RULE-001")
         
