@@ -5,6 +5,7 @@ import pickle
 def predict_mpg(config):
     try:
         ruleViolated = []
+
         # Convert the input to a JSON string if it's not already
         if isinstance(config, dict):
             config = json.dumps(config)
@@ -28,6 +29,8 @@ def predict_mpg(config):
             ruleViolated.append("RULE-004")
         else:
             ruleViolated.append("RULE-003")
+
+        return ruleViolated
 
     except Exception as e:
         return f'Error: {str(e)}'

@@ -32,7 +32,10 @@ class GetPredictionOutput(Resource):
             data = request.get_json()
             predict = prediction.predict_mpg(data)
             predictOutput = predict
-            return {'predict':predictOutput}
+            status="ALERT"
+            if(predictOutput==[]):
+                status="OK"
+            return {'status':status,'ruleViolated':predictOutput}
 
         except Exception as error:
             return {'error': error}
